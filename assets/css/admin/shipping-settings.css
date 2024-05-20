@@ -248,7 +248,7 @@
     display: flex;
   }
   
-  .tsm-containt-right input {
+  .tsm-container-right input {
     margin-left: 10px;
   }
   
@@ -380,7 +380,7 @@
     margin-left: 25px;
   }
   
-  .tsm-tooltip .tsm-tooltiptext {
+  .tsm-tooltip .tsm-tooltip-text {
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -397,7 +397,7 @@
     transition: opacity 0.3s;
   }
   
-  .tsm-tooltip .tsm-tooltiptext::after {
+  .tsm-tooltip .tsm-tooltip-text::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -408,7 +408,7 @@
     border-color: #555 transparent transparent transparent;
   }
   
-  .tsm-tooltip:hover .tsm-tooltiptext {
+  .tsm-tooltip:hover .tsm-tooltip-text {
     visibility: visible;
     opacity: 1;
   }

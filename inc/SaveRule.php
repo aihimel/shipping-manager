@@ -83,10 +83,4 @@ class SaveRule {
 
         // Optionally, you can do additional processing or save the data in custom tables
     }
-
-
 }
-    
-new SaveRule();
-
-

@@ -59,5 +59,4 @@ class AddShippingSettingsPage {
 		$rules = ( new RulesData() )->get_rules();
 		( TemplateLoader::init() )->load( 'settings-layout.php', [ 'rules' => $rules ] );
 	}
-
 }

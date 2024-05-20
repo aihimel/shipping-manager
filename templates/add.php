@@ -3,9 +3,9 @@
 use Themepaste\ShippingManager\SaveRule;
 
 defined('ABSPATH') || exit;
+
 $output = home_url(add_query_arg(NULL, NULL));
 $back = str_replace("&sub_page=add", "", $output);
-
 ?>
 
 <div class="tsm-col-12">
@@ -18,12 +18,12 @@ $back = str_replace("&sub_page=add", "", $output);
 
         <div class="tsm-col-12">
             <div class="tsm-col-6 tsm-p-0">
-                <div class="tsm-flex tsm-containt-right">
-                    <label class="tsm-label" for="">Title<span class="tsm-pl-1">*</span></label>
-                    <input type="text" class="tsm-form-control" id="Title " placeholder="" />
+                <div class="tsm-flex tsm-container-right">
+                    <label class="tsm-label" for="title">Title<span class="tsm-pl-1">*</span></label>
+                    <input type="text" class="tsm-form-control" id="title" placeholder="" />
 
                     <button class="tsm-tooltip">?
-                        <span class="tsm-tooltiptext">Tooltip text</span>
+                        <span class="tsm-tooltip-text">Tooltip text</span>
                     </button>
                 </div>
             </div>
@@ -31,11 +31,11 @@ $back = str_replace("&sub_page=add", "", $output);
 
         <div class="tsm-col-12">
             <div class="tsm-col-6 tsm-p-0">
-                <div class="tsm-containt-right">
+                <div class="tsm-container-right">
                     <div class="tsm-flex">
-                        <label class="tsm-label" for="">Descrption</label> <br>
+                        <label class="tsm-label" for="">Description</label> <br>
                         <button class="tsm-tooltip">?
-                            <span class="tsm-tooltiptext">Tooltip text</span>
+                            <span class="tsm-tooltip-text">Tooltip text</span>
                         </button>
                     </div>
                     <textarea class="tsm-form-control tsm-mt-1" rows="3" name="" id=""></textarea>
@@ -47,23 +47,23 @@ $back = str_replace("&sub_page=add", "", $output);
 
         <div class="tsm-col-6">
             <div class="tsm-flex">
-                <div class="tsm-actived">
+                <div class="tsm-activate">
                     <input type="checkbox" id="is_active" name="is_active">
-                    <label class="tsm-label" for="is_active"> Activate</label><br>
+                    <label class="tsm-label" for="is_active">Activate</label><br>
                 </div>
 
                 <button class="tsm-tooltip">?
-                    <span class="tsm-tooltiptext">Tooltip text</span>
+                    <span class="tsm-tooltip-text">Tooltip text</span>
                 </button>
             </div>
         </div>
         <div class="tsm-col-6">
-            <div class="tsm-flex tsm-containt-right">
-                <label class="tsm-label" for="">Priority<span class="tsm-pl-1">*</span></label>
+            <div class="tsm-flex tsm-container-right">
+                <label class="tsm-label" for="priority">Priority<span class="tsm-pl-1">*</span></label>
                 <input type="text" class="tsm-form-control" id="priority" placeholder="" />
 
                 <button class="tsm-tooltip">?
-                    <span class="tsm-tooltiptext">Tooltip text</span>
+                    <span class="tsm-tooltip-text">Tooltip text</span>
                 </button>
             </div>
         </div>
@@ -72,7 +72,7 @@ $back = str_replace("&sub_page=add", "", $output);
             <div class="tsm-flex tsm-pb-2">
                 <h4 class="tsm-selector-builder tsm-m-0">Selector Builder</h4>
                 <button class="tsm-tooltip">?
-                    <span class="tsm-tooltiptext">Tooltip text</span>
+                    <span class="tsm-tooltip-text">Tooltip text</span>
                 </button>
             </div>
 
@@ -123,7 +123,7 @@ $back = str_replace("&sub_page=add", "", $output);
                                         </td>
                                         <td style="width: 30%;" class="tsm-flex tsm-input-td">
                                             <input  type="number" step="0.1" value="12.50">
-                                            <input class="tsm-second-input" type="number" step="0.1" value="125.35">
+                                            <input class="tsm-second-input" type="number" step="1" value="125.35">
                                         </td>
                                         <td><a  class="tsm-tr-delete-button" >Delete</a></td>
                                     </tr>
@@ -169,7 +169,7 @@ $back = str_replace("&sub_page=add", "", $output);
             <div class="tsm-flex tsm-pb-2">
                 <h4 class="tsm-selector-builder tsm-m-0">Pricing</h4>
                 <button class="tsm-tooltip">?
-                    <span class="tsm-tooltiptext">Tooltip text</span>
+                    <span class="tsm-tooltip-text">Tooltip text</span>
                 </button>
             </div>
                 <div class="tsm-row">
