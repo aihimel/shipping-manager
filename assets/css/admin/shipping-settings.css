@@ -11,10 +11,7 @@
   src: url(fonts/SourceSansPro-Regular.otf);
 }
 
-* {
-    box-sizing: border-box;
-  }
-.tsm-pl-1{
+.tsm-pl-1 {
   padding-left: 5px;
 }
 .tsm-m-0{
@@ -62,14 +59,12 @@
     min-height: 1000px;
   }
   
-  .tsm-left-menu div{
-    margin: 0 70px;
-  }
 
   .tsm-left-menu div h2 {
     font-size: 32px;
     font-family: SortsMill;
     margin-bottom: 5px;
+    text-align: right;
   }
 
   .tsm-left-menu div p {
@@ -145,7 +140,7 @@
   .tsm-add-button:hover {
     color: #fff;
   }
-  .tsm-py-100{
+  .tsm-py-100 {
     padding: 100px 0;
   }
   
@@ -247,8 +242,12 @@
   .tsm-flex {
     display: flex;
   }
+
+  .tsm-textarea{
+    border: 1px solid #8c8f94;
+  }
   
-  .tsm-containt-right input {
+  .tsm-container-right input {
     margin-left: 10px;
   }
   
@@ -380,7 +379,7 @@
     margin-left: 25px;
   }
   
-  .tsm-tooltip .tsm-tooltiptext {
+  .tsm-tooltip .tsm-tooltip-text {
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -397,7 +396,7 @@
     transition: opacity 0.3s;
   }
   
-  .tsm-tooltip .tsm-tooltiptext::after {
+  .tsm-tooltip .tsm-tooltip-text::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -408,7 +407,7 @@
     border-color: #555 transparent transparent transparent;
   }
   
-  .tsm-tooltip:hover .tsm-tooltiptext {
+  .tsm-tooltip:hover .tsm-tooltip-text {
     visibility: visible;
     opacity: 1;
   }

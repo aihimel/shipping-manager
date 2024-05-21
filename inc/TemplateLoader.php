@@ -27,7 +27,8 @@ class TemplateLoader {
 	 *
 	 * @since TSM_SINCE
 	 *
-	 * @param $path
+	 * @param string $path
+	 * @param array $args
 	 *
 	 * @return void
 	 */
