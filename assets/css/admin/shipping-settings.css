@@ -62,14 +62,12 @@
     min-height: 1000px;
   }
   
-  .tsm-left-menu div{
-    margin: 0 70px;
-  }
 
   .tsm-left-menu div h2 {
     font-size: 32px;
     font-family: SortsMill;
     margin-bottom: 5px;
+    text-align: right;
   }
 
   .tsm-left-menu div p {
@@ -246,6 +244,10 @@
   
   .tsm-flex {
     display: flex;
+  }
+
+  .tsm-textarea{
+    border: 1px solid #8c8f94;
   }
   
   .tsm-container-right input {
