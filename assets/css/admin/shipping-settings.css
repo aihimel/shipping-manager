@@ -11,10 +11,7 @@
   src: url(fonts/SourceSansPro-Regular.otf);
 }
 
-* {
-    box-sizing: border-box;
-  }
-.tsm-pl-1{
+.tsm-pl-1 {
   padding-left: 5px;
 }
 .tsm-m-0{
@@ -143,7 +140,7 @@
   .tsm-add-button:hover {
     color: #fff;
   }
-  .tsm-py-100{
+  .tsm-py-100 {
     padding: 100px 0;
   }
   

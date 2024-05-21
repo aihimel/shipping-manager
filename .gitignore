@@ -3,3 +3,5 @@ node_modules
 vendor
 *.lock
 *.cache
+assets/css/admin/main.js
+assets/css/admin/admin-dashboard-app-style.css
