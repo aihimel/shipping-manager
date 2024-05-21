@@ -5,3 +5,6 @@ vendor
 *.cache
 assets/css/admin/main.js
 assets/css/admin/admin-dashboard-app-style.css
+assets/js/admin/admin-dashboard-app-script.asset.php
+assets/js/admin/admin-dashboard-app-script.js
+assets/js/admin/admin-dashboard-app-script.js.map

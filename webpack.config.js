@@ -5,19 +5,19 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-// let admin_dashboard_script = {
-//     mode: 'development',
-//     ...defaultConfig,
-//     ...{
-//         entry: {
-//             admin: './src/js/admin-dashboard-app-script.js',
-//         },
-//         output: {
-//             filename: 'admin-dashboard-app-script.js',
-//             path: __dirname + '/assets/js/admin',
-//         }
-//     }
-// }
+let admin_dashboard_script = {
+    mode: 'development',
+    ...defaultConfig,
+    ...{
+        entry: {
+            admin: './src/js/admin-dashboard-app-script.js',
+        },
+        output: {
+            filename: 'admin-dashboard-app-script.js',
+            path: __dirname + '/assets/js/admin',
+        }
+    }
+}
 
 let admin_dashboard_style = {
     mode: 'development',
@@ -44,4 +44,4 @@ let admin_dashboard_style = {
     ],
 }
 
-module.exports = [ /* admin_dashboard_script, */ admin_dashboard_style ];
+module.exports = [ admin_dashboard_script, admin_dashboard_style ];
