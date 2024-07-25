@@ -22,7 +22,11 @@ trait Parser {
 		$fields = array_intersect( $allowed_fields, array_keys( $_POST ) ); // Nonce already verified
 		$data = [];
 		foreach ( $fields as $key ) {
-			$data[ $key ] = sanitize_text_field( wp_unslash( $_POST[ $key ] ) ); // Nonce already verified
+			if ( is_array( $_POST[ $key ] ) ) {
+				$data[ $key ] = wp_unslash( $_POST[ $key ] );
+			} else {
+				$data[ $key ] = sanitize_text_field( wp_unslash( $_POST[ $key ] ) ); // Nonce already verified
+			}
 		}
 		return $data;
 	}

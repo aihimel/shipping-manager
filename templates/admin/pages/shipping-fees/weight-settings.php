@@ -11,7 +11,7 @@ function tsm_get_weight_range_name( int $serial, string $name ): string {
 }
 
 function tsm_get_weight_range_value( int $serial, string $name ): string {
-	return $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ][ $serial ][ $name ] ?? '';
+	return $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ][ $serial ][ $name ];
 }
 
 ?>
@@ -58,34 +58,39 @@ function tsm_get_weight_range_value( int $serial, string $name ): string {
 	>
 	<div class="help-tip"><?php esc_html_e( 'Fees for per unit weight for product shipping.', 'shipping-manager' ); ?></div>
 </div>
-<div class="input-wrapper range">
+<div class="input-wrapper range weight-range-row-wrapper">
 	<label for=""><?php esc_html_e( 'Weight Range Fee', 'shipping-manager' ); ?></label>
-	<div class="range-row-wrapper">
-		from
-		<input
-			id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_FROM ) ); ?>"
-			name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_FROM ) ); ?>"
-			value="<?php echo esc_attr( tsm_get_weight_range_value( 0, ShippingFeesSettings::WEIGHT_FROM ) ); ?>"
-			type="text"
-		>
-		to
-		<input
-			id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_TO ) ); ?>"
-			name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_TO ) ); ?>"
-			value="<?php echo esc_attr( tsm_get_weight_range_value( 0, ShippingFeesSettings::WEIGHT_TO ) ); ?>"
-			type="text"
-		>
-		fee
-		<input
-			id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_RANGE_FEE ) ); ?>"
-			name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_RANGE_FEE ) ); ?>"
-			value="<?php echo esc_attr( tsm_get_weight_range_value( 0, ShippingFeesSettings::WEIGHT_RANGE_FEE ) ); ?>"
-			type="text"
-		>
-		<div class="remove-row-button">Remove</div>
-	</div>
+  <input id="weight-range-row-count-id" type="hidden" value="<?php echo esc_attr( count( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ] ) ); ?>">
+  <div class="weight-range-row-section-wrapper">
+	  <?php foreach( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ] as $key => $weight_range_rules ): ?>
+      <div class="range-row-wrapper" id="weight-range-row-wrapper-id-<?php esc_attr( $key ); ?>">
+        from
+        <input
+          id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_FROM ) ); ?>"
+          name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_FROM ) ); ?>"
+          value="<?php echo esc_attr( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ][ $key ][ ShippingFeesSettings::WEIGHT_FROM ] ?? 0 ); ?>"
+          type="text"
+        >
+        to
+        <input
+          id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_TO ) ); ?>"
+          name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_TO ) ); ?>"
+          value="<?php echo esc_attr( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ][ $key ][ ShippingFeesSettings::WEIGHT_TO ] ?? 0 ); ?>"
+          type="text"
+        >
+        fee
+        <input
+          id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_RANGE_FEE ) ); ?>"
+          name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_RANGE_FEE ) ); ?>"
+          value="<?php echo esc_attr( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ][ $key ][ ShippingFeesSettings::WEIGHT_RANGE_FEE ] ?? 0 ); ?>"
+          type="text"
+        >
+        <div class="remove-row-button">Remove</div>
+      </div>
+	  <?php endforeach; ?>
+  </div>
 	<div class="add-new-row-button">
-		<div class="add-new-button-text">Add New</div>
+		<div class="add-new-button-text" id="weight-add-new-range-row-button">Add New</div>
 	</div>
 	<div class="help-tip"><?php esc_html_e( 'Fees for unit range weight for product shipping.', 'shipping-manager' ); ?></div>
 </div>
