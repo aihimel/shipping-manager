@@ -63,22 +63,22 @@ function tsm_get_weight_range_value( int $serial, string $name ): string {
   <input id="weight-range-row-count-id" type="hidden" value="<?php echo esc_attr( count( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ] ) ); ?>">
   <div class="weight-range-row-section-wrapper">
 	  <?php foreach( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ] as $key => $weight_range_rules ): ?>
-      <div class="range-row-wrapper" id="weight-range-row-wrapper-id-<?php esc_attr( $key ); ?>">
-        from
+      <div class="range-row-wrapper" id="weight-range-row-wrapper-id-<?php echo esc_attr( $key ); ?>">
+        From
         <input
           id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_FROM ) ); ?>"
           name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_FROM ) ); ?>"
           value="<?php echo esc_attr( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ][ $key ][ ShippingFeesSettings::WEIGHT_FROM ] ?? 0 ); ?>"
           type="text"
         >
-        to
+        To
         <input
           id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_TO ) ); ?>"
           name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_TO ) ); ?>"
           value="<?php echo esc_attr( $data[ ShippingFeesSettings::WEIGHT_BASED_RANGE_UNIT_RULES ][ $key ][ ShippingFeesSettings::WEIGHT_TO ] ?? 0 ); ?>"
           type="text"
         >
-        fee
+        Fee
         <input
           id="<?php echo esc_attr( tsm_get_weight_range_id( 0, ShippingFeesSettings::WEIGHT_RANGE_FEE ) ); ?>"
           name="<?php echo esc_attr( tsm_get_weight_range_name( 0, ShippingFeesSettings::WEIGHT_RANGE_FEE ) ); ?>"
