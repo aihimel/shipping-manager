@@ -13,6 +13,7 @@ use \Themepaste\ShippingManager\Models\FreeShippingSettings;
 ?>
 <form class="tsm-admin-settings-form" method="POST">
   <?php tps_manager_admin_nonce_field(); ?>
+	<?php if ( tps_manager_is_pro_plugin_active() ): ?>
   <div class="input-wrapper checkbox">
     <lable for="<?php echo esc_attr( FreeShippingSettings::HIDE_OTHERS ); ?>"><?php esc_html_e( 'Hide Others', 'tps-manager' ); ?></lable>
     <input
@@ -24,6 +25,7 @@ use \Themepaste\ShippingManager\Models\FreeShippingSettings;
     >
     <div class="help-tip"><?php esc_html_e( "Hide other shipping methods while free shipping is available." ); ?></div>
   </div>
+  <?php endif; ?>
   <div class="input-wrapper checkbox">
     <lable for="<?php echo esc_attr( FreeShippingSettings::FREE_SHIPPING_BAR ); ?>"><?php esc_html_e( 'Free Shipping Bar', 'tps-manager' ); ?></lable>
     <input
@@ -56,6 +58,7 @@ use \Themepaste\ShippingManager\Models\FreeShippingSettings;
     >
     <div class="help-tip"><?php esc_html_e( "Cart minimum amount for free shipping." ); ?></div>
   </div>
+	<?php if ( tps_manager_is_pro_plugin_active() ): ?>
   <div class="input-wrapper checkbox">
     <lable for="<?php echo esc_attr( FreeShippingSettings::AFTER_COUPON ); ?>"><?php esc_html_e( 'After Coupon', 'tps-manager' ); ?></lable>
     <input
@@ -67,6 +70,7 @@ use \Themepaste\ShippingManager\Models\FreeShippingSettings;
     >
     <div class="help-tip"><?php esc_html_e( "Enable this to calculate free shipping after coupon discount has been applied for product." ); ?></div>
   </div>
+  <?php endif; ?>
   <div class="input-wrapper submit">
     <button class="woocommerce-save-button components-button is-primary" value="free-shipping"><?php esc_html_e( 'Save', 'tps-manager' ); ?></button>
   </div>
