@@ -51,6 +51,18 @@ final class ShippingManager {
 	 * @return void
 	 */
 	private function __construct() {
+		add_action( 'init', [ $this, 'load_plugin' ] );
+		do_action( 'tps_manager_after_plugin_loaded' );
+	}
+
+	/**
+	 * Loads the plugin
+	 *
+	 * @since TPS_MANAGER
+	 *
+	 * @return void
+	 */
+	public function load_plugin() {
 		self::$container[ Routes::INSTANCE_KEY ] = new Routes();
 		self::$container[ Assets::INSTANCE_KEY ] = new Assets();
 		self::$container[ Messages::INSTANCE_KEY ] = new Messages();

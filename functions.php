@@ -168,3 +168,14 @@ function tps_manager_is_checked( string $value, bool $print = true, string $comp
 function tps_manager_is_single_product_page(): bool {
 	return function_exists( 'is_product' ) && is_product();
 }
+
+/**
+ * Checks if pro plugin is active or not
+ *
+ * @since TPS_SINCE
+ *
+ * @return bool
+ */
+function tps_manager_is_pro_plugin_active(): bool {
+	return apply_filters( 'tps_manager_is_pro_plugin_active', false );
+}
