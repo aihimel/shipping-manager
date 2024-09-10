@@ -52,6 +52,7 @@ final class ShippingManager {
 	 */
 	private function __construct() {
 		add_action( 'init', [ $this, 'load_plugin' ] );
+		self::$container[ Controller::INSTANCE_KEY ] = new Controller();
 		do_action( 'tps_manager_after_plugin_loaded' );
 	}
 
@@ -68,7 +69,6 @@ final class ShippingManager {
 		self::$container[ Messages::INSTANCE_KEY ] = new Messages();
 		self::$container[ Template::INSTANCE_KEY ] = new Template();
 		self::$container[ Menu::INSTANCE_KEY ] = new Menu();
-		self::$container[ Controller::INSTANCE_KEY ] = new Controller();
 		self::$container[ Form_Manager::INSTANCE_KEY ] = new Form_Manager();
 
 		// Frontend logic

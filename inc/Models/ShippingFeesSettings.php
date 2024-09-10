@@ -28,6 +28,10 @@ class ShippingFeesSettings extends Model {
 	const WEIGHT_TO = 'weight-to';
 	const WEIGHT_RANGE_FEE = 'weight-range-fee';
 
+	// New
+	const SHIPPING_CLASS = 'shipping-class';
+	const SHIPPING_ZONES = 'shipping-zones';
+
 	/**
 	 * Declaring default settings
 	 *
@@ -42,6 +46,8 @@ class ShippingFeesSettings extends Model {
 		self::WEIGHT_BASED_SHIPPING_FEES_TYPE => self::WEIGHT_PER_UNIT,
 		self::WEIGHT_BASED_PER_UNIT_AMOUNT_FEES => 0.00,
 		self::WEIGHT_BASED_RANGE_UNIT_RULES => [],
+		self::SHIPPING_CLASS => 0,
+		self::SHIPPING_ZONES => 0,
 	];
 
 	/**

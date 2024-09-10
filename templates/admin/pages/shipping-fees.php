@@ -37,6 +37,40 @@ use \Themepaste\ShippingManager\Models\ShippingFeesSettings;
     >
 		<div class="help-tip"><?php esc_html_e( 'Processing fee amount.', 'tps-manager' ); ?></div>
 	</div>
+
+	  <?php
+      $shipping_classes = WC()->shipping()->get_shipping_classes();
+      if ( ! empty( $shipping_classes ) ):
+    ?>
+    <div class="input-wrapper amount">
+      <label for="<?php echo esc_attr( ShippingFeesSettings::SHIPPING_CLASS ); ?>"><?php esc_html_e( 'Shipping Classes', 'tps-manager' ); ?></label>
+      <select name="<?php echo esc_attr( ShippingFeesSettings::SHIPPING_CLASS ); ?>" id="<?php echo esc_attr( ShippingFeesSettings::SHIPPING_CLASS ); ?>">
+        <option value="">Select One</option>
+        <?php foreach( $shipping_classes as $shipping_class ): ?>
+        <option <?php if ( $shipping_class->term_id == ( (int) $data[ ShippingFeesSettings::SHIPPING_CLASS ] ) ) echo "selected" ?> value="<?php echo esc_attr( $shipping_class->term_id ); ?>"><?php echo esc_html( $shipping_class->name ); ?></option>
+        <?php endforeach; ?>
+      </select>
+      <div class="help-tip"><?php esc_html_e( 'Select exact shipping class to be applied.', 'tps-manager' ); ?></div>
+    </div>
+    <?php endif; ?>
+
+
+	  <?php
+      $shipping_zones = WC_Shipping_Zones::get_zones();
+      if ( ! empty( $shipping_zones ) ):
+    ?>
+    <div class="input-wrapper amount">
+      <label for="<?php echo esc_attr( ShippingFeesSettings::SHIPPING_ZONES ); ?>"><?php esc_html_e( 'Shipping Zones', 'tps-manager' ); ?></label>
+      <select name="<?php echo esc_attr( ShippingFeesSettings::SHIPPING_ZONES ); ?>" id="<?php echo esc_attr( ShippingFeesSettings::SHIPPING_ZONES ); ?>">
+        <option value="">Select One</option>
+        <?php foreach( $shipping_zones as $shipping_zone ): ?>
+        <option <?php if ( $shipping_zone['zone_id'] == ( (int) $data[ ShippingFeesSettings::SHIPPING_ZONES ] ) ) echo "selected" ?> value="<?php echo esc_attr( $shipping_zone['zone_id'] ); ?>"><?php echo esc_html( $shipping_zone['zone_name'] ); ?></option>
+        <?php endforeach; ?>
+      </select>
+      <div class="help-tip"><?php esc_html_e( 'Select exact shipping zone to be applied.', 'tps-manager' ); ?></div>
+    </div>
+	  <?php endif; ?>
+
   <?php endif; ?>
   <?php tps_manager_template_parts( 'admin/pages/shipping-fees/weight-settings' ); ?>
   <div class="input-wrapper submit">
