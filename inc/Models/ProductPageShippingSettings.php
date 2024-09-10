@@ -17,9 +17,11 @@ class ProductPageShippingSettings extends Model {
 	 * @since 1.2.1
 	 */
 	const PRODUCT_PAGE_SHIPPING = 'enable-product-page-shipping';
+	const SHIPPING_CLASS = 'shipping-class';
 
 	protected array $settings = [
 		self::PRODUCT_PAGE_SHIPPING => Constants::NO,
+		self::SHIPPING_CLASS => '',
 	];
 
 	public function __construct() {
